@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:500,700&display=swap");
+
+:root {
+  --face-height: 224px;
+  --face-width: 184px;
+  --face-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --ff-quicksand: "Quicksand";
+  --fcolor-dark: #2c2c2c;
+  --fcolor-light: #f4f4f4;
+  --linear-bg-day-fallback: rgb(60, 199, 157);
+  --linear-bg-day: linear-gradient(
+    0deg,
+    rgba(60, 199, 157, 1) 0%,
+    rgba(83, 190, 250, 1) 100%
+  );
+  --linear-bg-afternoon-fallback: rgb(81, 122, 139);
+  --linear-bg-afternoon: linear-gradient(
+    0deg,
+    rgba(81, 122, 139, 1) 0%,
+    rgba(255, 230, 131, 1) 100%
+  );
+  --linear-bg-night-fallback: rgb(133, 89, 136);
+  --linear-bg-night: linear-gradient(
+    0deg,
+    rgba(133, 89, 136, 1) 0%,
+    rgba(107, 73, 132, 1) 25%,
+    rgba(72, 52, 117, 1) 55%,
+    rgba(20, 24, 82, 1) 85%,
+    rgba(7, 11, 52, 1) 100%
+  );
+  --move-top: top 1s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-quicksand), sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Watch Face BG Styling */
+.watch-face {
+  height: var(--face-height);
+  width: var(--face-width);
+  border-radius: 1rem;
+  box-shadow: var(--face-shadow);
+  background: var(--linear-bg-day-fallback);
+  background: var(--linear-bg-day);
+  overflow: hidden;
+}
+
+/* Time Styling and Positioning */
+.time-info {
+  padding-top: 0.75rem;
+  color: var(--fcolor-dark);
+}
+
+#time {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+#amPm {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Illustrations Setup */
+.illustration-area {
+  position: relative;
+}
+
+.illustration-area img {
+  display: block;
+  position: absolute;
+  transition: var(--move-top);
+}
+
+/* Morning Time */
+#sun {
+  top: 120px; /* original position 0 */
+  left: 22px;
+}
+
+#mount-small {
+  top: 125px; /* original position 65px */
+  left: 47px;
+}
+
+#mount-big {
+  top: 130px; /* original position 53px */
+  left: 66px;
+}
+
+/* Afternoon Setup */
+#sun-afternoon {
+  top: 130px; /* original position 5px */
+  left: 79px;
+}
+
+#sea-reflection {
+  top: 140px; /* original position 85px */
+  left: 33px;
+}
+
+#cloud-big {
+  top: 125px; /* original position 25px */
+  left: 30px;
+}
+
+#cloud-small {
+  top: 130px; /* original position 53px */
+  left: 134px;
+}
+
+/* Evening Setup */
+#moon {
+  top: 150px; /* original position 17px */
+  left: 79px;
+}
+
+#stars {
+  top: 120px; /* original position 13px */
+  left: 58px;
+}
+
+#cloud-s-night {
+  top: 130px; /* original position 18px */
+  left: 47px;
+}
+
+#cloud-m-night {
+  top: 140px; /* original position 72px */
+  left: 33px;
+}
+
+#cloud-b-night {
+  top: 130px; /* original position 35px */
+  left: 97px;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
